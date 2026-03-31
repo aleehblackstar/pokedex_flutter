@@ -6,13 +6,13 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30),
+          padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Column(
             children: [
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "Pokedex",
@@ -23,9 +23,22 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              Text(
+              const Text(
                 "Procure um Pokemon pelo nome ou identificador",
                 style: TextStyle(color: primaryColor, fontSize: 18),
+              ),
+              const SizedBox(height: 20),
+              TextField(
+                decoration: InputDecoration(
+                  hintText: "Nome ou identificador",
+                  hintStyle: const TextStyle(color: primaryColor),
+                  filled: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide.none,
+                  ),
+                  prefixIcon: const Icon(Icons.search, color: primaryColor),
+                ),
               ),
             ],
           ),
