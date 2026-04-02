@@ -28,6 +28,31 @@ class HomePage extends StatelessWidget {
                 style: TextStyle(color: primaryColor, fontSize: 18),
               ),
               const SizedBox(height: 20),
+
+              Expanded(
+                child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                  ),
+                  itemCount: 20,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      color: Colors.red,
+                      child: Center(
+                        child: Text(
+                          "Pokemon $index",
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+
+              const SizedBox(height: 10),
+
               TextField(
                 decoration: InputDecoration(
                   hintText: "Nome ou identificador",
