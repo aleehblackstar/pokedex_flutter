@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex_flutter/colors.dart';
+import 'package:pokedex_flutter/pages/home/widgets/poker_card.widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -35,18 +36,11 @@ class HomePage extends StatelessWidget {
                     crossAxisCount: 2,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
+                    childAspectRatio: 1.4,
                   ),
                   itemCount: 20,
                   itemBuilder: (context, index) {
-                    return Container(
-                      color: Colors.red,
-                      child: Center(
-                        child: Text(
-                          "Pokemon $index",
-                          style: const TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    );
+                    return const PokerCard();
                   },
                 ),
               ),
